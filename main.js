@@ -6,7 +6,7 @@ const accountSid = 'ACb32c05703c2627fe10edccd6db18d682';
 const authToken = '38e55a71e39c56c1f089fff9da7526b4';
 const client = require('twilio')(accountSid, authToken);
 
-// Rota que o ESP32 irá chamar
+
 app.get('/movimento', (req, res) => {
   client.messages
     .create({
@@ -24,6 +24,10 @@ app.get('/movimento', (req, res) => {
       res.status(500).send('Erro ao enviar mensagem');
     });
 });
+
+app.get('/', (req,res) => {
+  res.send("The API  is running ✅");
+})
 
 app.listen(port, () => {
   console.log(`Servidor ouvindo na porta ${port}`);
