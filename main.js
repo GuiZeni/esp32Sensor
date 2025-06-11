@@ -3,8 +3,8 @@ const app = express();
 const port = 3000;
 
 const accountSid = 'ACb32c05703c2627fe10edccd6db18d682';
-const authToken = 'f43da464b1c18805c20aedf772c1cc2e';
-const client = require('twilio')(accountSid, authToken); 
+const authToken = '[AuthToken]';
+const client = require('twilio')(accountSid, authToken);
 
 // Rota que o ESP32 irá chamar
 app.get('/movimento', (req, res) => {
